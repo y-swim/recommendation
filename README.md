@@ -11,4 +11,4 @@
 
 ## Screenshots
 
-![screenshots.png](image/README/1644510063567.png)
+![screenshots.png](image/README/screenshots.png)
