@@ -8,3 +8,7 @@
    ```
    streamlit run main.py
    ```
+
+## Screenshots
+
+![1644510063567.png](image/README/1644510063567.png)
