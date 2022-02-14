@@ -1,6 +1,7 @@
 import pandas as pd
 from math import *
 
+# load dataset
 ratings = pd.read_csv('ratings.csv', header= None)
 ratings.columns = ['userId', 'itemId', 'rank', 'timestamp']
 
@@ -28,6 +29,8 @@ class Recommendation:
         self.data = data
     
     def euc_dis(self, user1, user2):
+        ''' calulate similarity
+        '''
         user1_data = self.dic[user1]
         user2_data = self.dic[user2]
 
@@ -40,6 +43,8 @@ class Recommendation:
         return self, 1/(1+sqrt(dis))
 
     def top10_sim(self, userId):
+        ''' get top 10 items
+        '''
         res = []
         for userid in self.dic.keys():
             if not userid == userId:
@@ -50,6 +55,8 @@ class Recommendation:
         return self, res[:10]
 
     def rec(self, user):
+        ''' make a recommendation
+        '''
         _, tmp = self.top10_sim(user)
         top_sim_user = tmp[0][0]
 
